@@ -15,6 +15,7 @@
 		5E384969261175B600F4B8B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E384967261175B600F4B8B3 /* LaunchScreen.storyboard */; };
 		5E384974261175B600F4B8B3 /* BranchesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E384973261175B600F4B8B3 /* BranchesTests.swift */; };
 		5E38497F261175B600F4B8B3 /* BranchesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38497E261175B600F4B8B3 /* BranchesUITests.swift */; };
+		5E759C532628DD23002B98EE /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E759C522628DD23002B98EE /* RatingControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5E38497A261175B600F4B8B3 /* BranchesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BranchesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E38497E261175B600F4B8B3 /* BranchesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchesUITests.swift; sourceTree = "<group>"; };
 		5E384980261175B600F4B8B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E759C522628DD23002B98EE /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				5E38495C261175B500F4B8B3 /* AppDelegate.swift */,
 				5E38495E261175B500F4B8B3 /* SceneDelegate.swift */,
 				5E384960261175B500F4B8B3 /* ViewController.swift */,
+				5E759C522628DD23002B98EE /* RatingControl.swift */,
 				5E384962261175B500F4B8B3 /* Main.storyboard */,
 				5E384965261175B600F4B8B3 /* Assets.xcassets */,
 				5E384967261175B600F4B8B3 /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E759C532628DD23002B98EE /* RatingControl.swift in Sources */,
 				5E384961261175B500F4B8B3 /* ViewController.swift in Sources */,
 				5E38495D261175B500F4B8B3 /* AppDelegate.swift in Sources */,
 				5E38495F261175B500F4B8B3 /* SceneDelegate.swift in Sources */,

@@ -25,7 +25,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
 
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         nameLabel.text = "<No name>"
-        print("hellooooo")
     }
     
 //    MARK: UITextFieldDelegate
@@ -40,7 +39,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
-        print("what")
         nameTextField.resignFirstResponder()
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .photoLibrary
