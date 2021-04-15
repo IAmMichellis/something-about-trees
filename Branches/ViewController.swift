@@ -7,13 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
 //    MARK: Properties
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     
+    @IBOutlet weak var photoImageView: UIImageView!
     
     
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         nameLabel.text = "<No name>"
+        print("hellooooo")
     }
     
 //    MARK: UITextFieldDelegate
@@ -35,6 +37,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         nameLabel.text = textField.text
+    }
+    
+    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+        print("what")
+        nameTextField.resignFirstResponder()
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        present(imagePickerController, animated:true, completion: nil)
+    }
+    
+//    MARK: UIImagePickerControllerDelegate
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            fatalError("Expected dictionary with image, got \(info)")
+        }
+        photoImageView.image = selectedImage
+        dismiss(animated: true, completion: nil)
     }
 }
 
