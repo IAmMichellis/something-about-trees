@@ -13,18 +13,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
-    
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var ratingControl: RatingControl!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         nameTextField.delegate = self
-    }
-
-    @IBAction func setDefaultLabelText(_ sender: UIButton) {
-        nameLabel.text = "<No name>"
     }
     
 //    MARK: UITextFieldDelegate

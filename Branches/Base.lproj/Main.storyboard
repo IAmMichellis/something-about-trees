@@ -16,11 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qRO-NE-T3M">
-                                <rect key="frame" x="0.0" y="64" width="414" height="510.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qRO-NE-T3M">
+                                <rect key="frame" x="0.0" y="64" width="414" height="472.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIA-2a-6EG">
-                                        <rect key="frame" x="0.0" y="0.0" width="85" height="20.5"/>
+                                        <rect key="frame" x="164.5" y="0.0" width="85" height="20.5"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -31,15 +31,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVY-B2-Wc8">
-                                        <rect key="frame" x="0.0" y="70.5" width="141" height="30"/>
-                                        <state key="normal" title="Set default label text"/>
-                                        <connections>
-                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GS0-O5-KGu"/>
-                                        </connections>
-                                    </button>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="350" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="ex8-3A-s3M">
-                                        <rect key="frame" x="0.0" y="108.5" width="350" height="350"/>
+                                        <rect key="frame" x="32" y="70.5" width="350" height="350"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ex8-3A-s3M" secondAttribute="height" multiplier="1:1" id="LJj-2w-Sud"/>
@@ -48,8 +41,8 @@
                                             <outletCollection property="gestureRecognizers" destination="0PM-RA-4Ct" appends="YES" id="Q60-Kx-CQQ"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cFW-xl-16A" customClass="RatingControl" customModule="Branches" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="466.5" width="252" height="44"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cFW-xl-16A" userLabel="Rating Control" customClass="RatingControl" customModule="Branches" customModuleProvider="target">
+                                        <rect key="frame" x="81" y="428.5" width="252" height="44"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="size" keyPath="starSize">
                                                 <size key="value" width="44" height="44"/>
@@ -78,6 +71,7 @@
                         <outlet property="nameLabel" destination="NIA-2a-6EG" id="jEF-XT-xeb"/>
                         <outlet property="nameTextField" destination="6zy-tb-5Lw" id="6sk-DG-za1"/>
                         <outlet property="photoImageView" destination="ex8-3A-s3M" id="1G9-Fb-3jI"/>
+                        <outlet property="ratingControl" destination="cFW-xl-16A" id="UrL-wF-k4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
