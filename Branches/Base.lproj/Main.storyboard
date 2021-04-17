@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QaH-p5-DyI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BY9-eL-hkt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--New Tree!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Branches" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TreeViewController" customModule="Branches" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qRO-NE-T3M">
-                                <rect key="frame" x="0.0" y="64" width="414" height="444"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qRO-NE-T3M">
+                                <rect key="frame" x="0.0" y="76" width="414" height="450"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter plant name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zy-tb-5Lw">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
@@ -34,8 +34,8 @@
                                             <outletCollection property="gestureRecognizers" destination="0PM-RA-4Ct" appends="YES" id="Q60-Kx-CQQ"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cFW-xl-16A" userLabel="Rating Control" customClass="RatingControl" customModule="Branches" customModuleProvider="target">
-                                        <rect key="frame" x="81" y="400" width="252" height="44"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cFW-xl-16A" userLabel="Rating Control" customClass="RatingControl" customModule="Branches" customModuleProvider="target">
+                                        <rect key="frame" x="81" y="400" width="252" height="50"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="size" keyPath="starSize">
                                                 <size key="value" width="44" height="44"/>
@@ -60,22 +60,40 @@
                             <constraint firstItem="qRO-NE-T3M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="TMh-KC-c6L"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="M8m-BH-9fv"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="New Tree!" id="XOf-MW-KOB">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zoA-V2-mAh">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="9U4-9s-XaR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="uLa-bh-Pto">
+                            <connections>
+                                <segue destination="Ozk-37-vLA" kind="unwind" unwindAction="unwindToTreeListWithSender:" id="5fu-d1-qSU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="nameTextField" destination="6zy-tb-5Lw" id="6sk-DG-za1"/>
                         <outlet property="photoImageView" destination="ex8-3A-s3M" id="1G9-Fb-3jI"/>
                         <outlet property="ratingControl" destination="cFW-xl-16A" id="UrL-wF-k4b"/>
+                        <outlet property="saveButton" destination="uLa-bh-Pto" id="Zzb-vJ-ZuX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="Ozk-37-vLA" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="0PM-RA-4Ct">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="EXD-SA-eoX"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="76.339285714285708"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="76.339285714285708"/>
         </scene>
-        <!--Tree Table View Controller-->
+        <!--Trees!-->
         <scene sceneID="oHs-6s-GXk">
             <objects>
                 <tableViewController id="QaH-p5-DyI" customClass="TreeTableViewController" customModule="Branches" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,10 +138,53 @@
                             <outlet property="delegate" destination="QaH-p5-DyI" id="F3Z-11-5h3"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Trees!" id="q4a-Ex-uVB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="L0c-cw-MQS">
+                            <connections>
+                                <segue destination="Hxg-4X-hJP" kind="presentation" id="jrd-PO-Su3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KH6-FF-ikN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="276.81159420289856" y="75.669642857142847"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fTT-90-qCF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BY9-eL-hkt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JvL-wV-YW8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QaH-p5-DyI" kind="relationship" relationship="rootViewController" id="FJC-Ob-GBS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i7c-tG-SPN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="-633.33333333333337" y="75.669642857142847"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1El-LZ-Xsa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hxg-4X-hJP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FYc-A3-gWa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="YLZ-Qg-mK7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t3U-gM-DVr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="76.339285714285708"/>
         </scene>
     </scenes>
     <resources>

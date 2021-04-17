@@ -39,6 +39,17 @@ class TreeTableViewController: UITableViewController {
         return cell
     }
     
+    //MARK: Actions
+    @IBAction func unwindToTreeList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? TreeViewController, let tree = sourceViewController.tree {
+            let newIndexPath = IndexPath(row: trees.count, section: 0)
+            trees.append(tree)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+
+
+        }
+    }
+    
     //MARK: Private Methods
      
     private func loadSampleTrees() {
