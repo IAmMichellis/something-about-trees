@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TreeViewController.swift
 //  Branches
 //
 //  Created by Michelle Ellis on 2021-03-28.
@@ -7,11 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class TreeViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
 //    MARK: Properties
     
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
@@ -31,7 +30,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        nameLabel.text = textField.text
     }
     
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
