@@ -35,7 +35,12 @@ class TreeTableViewController: UITableViewController {
         
         let tree = trees[indexPath.row]
         cell.ratingView.rating = tree.rating
-        cell.nameLabel.text = tree.name 
+        cell.nameLabel.text = tree.name
+        if let photo = tree.photo {
+            cell.photoView.image = photo
+        } else {
+            cell.photoView.image = UIImage(named:"defaultPhoto")
+        }
         return cell
     }
     
@@ -45,8 +50,6 @@ class TreeTableViewController: UITableViewController {
             let newIndexPath = IndexPath(row: trees.count, section: 0)
             trees.append(tree)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
-
-
         }
     }
     
